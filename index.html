@@ -10,24 +10,30 @@
 </head>
 
 <body>
-    <section onclick="organizer('2')" id="fase1">
-        <div></div>
+    <section id="fase1">
+        <div>
+            <input onclick="organizer('2')" type="button" value="Empezar">
+        </div>
     </section>
-    <section onclick="organizer('3')" id="fase2" style="display:none">
-        <input onclick='selectCar("subaru")' type="button" value="coche1">
-        <input onclick='selectCar("toyoya")' type="button" value="coche2">
-        <div></div>
+    <section id="fase2" style="display:none">
+        <div>
+            <input onclick='selectCar("subaru")' type="button" value="Subaru">
+            <input onclick='selectCar("toyota")' type="button" value="Toyota">
+            <input onclick='selectCar("bmw")' type="button" value="Bmw">
+            <input onclick='selectCar("mercedes")' type="button" value="Mercedes">
+        </div>
     </section>
-    <section onclick="organizer('4')" id="fase3" style="display:none">
-        <div></div>
+    <section id="fase3" style="display:none">
+        <div>
+            <input onclick="Acelerar()" id="Acelerar" type="button" value="Acelerar">
+        </div>
     </section>
-    <section onclick="organizer('5')" id="fase4" style="display:none">
-        <div></div>
+    <section id="fase4" style="display:none">
+        <div>
+            <h1 id="winner"></h1>
+            <input onclick="reset()" type="button" value="Reiniciar">
+        </div>
     </section>
-    <section onclick="organizer('1')" id="fase5" style="display:none">
-        <div></div>
-    </section>
-    <input onclick="Acelerar()" id="Acelerar" type="button" value="Acelerar">
     <script src="js/main.js"></script>
 </body>
 
