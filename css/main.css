@@ -1,10 +1,19 @@
+@font-face {
+    font-family: '8-bit_pusabregular';
+    src: url('../fonts/8-bit-pusab-webfont.woff2') format('woff2'),
+         url('../fonts/8-bit-pusab-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
     margin: 0;
     height: 100vh;
     width: 100vw;
     display: flex;
     background-color: rgb(24, 24, 24);
-    font-size: calc(12px + 0.5em);
+    font-family: '8-bit_pusabregular';
 }
 
 section {
@@ -12,35 +21,11 @@ section {
     margin: auto;
 }
 
-.desc{
-    height: 10vh;
-    width: 10vw;
-    margin-top: 10vh;
-    color: blueviolet;
+.main {
+    margin: auto;
 }
-
-.desc img {
-    margin-top: 10vh;
-}
-
-input {
-    height: 3vh;
-    width: 100%;
-    font-size: 1.5em;
-    background-color: blueviolet;
-    border-radius: 0.2em;
-}
-
-img {
-    width: 15vh;
-}
-
 
 /* ----------------------- FASE 1 ----------------------- */
-#fase1 {
-    display: flex;
-}
-
 #fase1 img {
     width: 100vh;
     margin:auto;
@@ -49,30 +34,112 @@ img {
 
 .indv_coche{
     display: block;
-    text-align: center;    
+    text-align: center;  
 }
 
 /* ----------------------- FASE 2 ----------------------- */
-#fase2 {
-    margin: auto;
-}
-
 .main_coches {
-    display: flex;
-    justify-content: center;    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5em;
+    height: 80vh;
+    width: 37.5vw;
+    border: black solid 1px;
+    
 }
 
 .indv_coche{
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.cars {
+    height: 10vh;
+    width: 5vw;
+}
+
+.desc{
+    height: 3vh;
+    color: white;
+    padding:1em 0 0 0;
+    font-size: 0.55em;
+}
+
+.desc img {
+    margin-top: 5vh;
+    height: 300%;
+}
+
+.btn {
+    height: 4vh;
+    width: 5vw;
+    padding-top:5vh;
+}
+
+.greyscale {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
 /* ----------------------- FASE 3 ----------------------- */
 #fase3 {
     margin: auto;
 }
 
+.main_race{
+    height: 80vh;
+    width: 37.5vw;
+
+}
+
+#race_cont {
+    display: flex;
+}
+
+#racer1 {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 10vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#race {
+    height: 80vh;
+    width: 17.5vw;
+    border: black solid 1px;
+}
+
+#racer2 {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 10vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#p1_car img{
+    width: 15vh;
+}
+
+#p2_car img{
+    width: 15vh;
+}
+
+#p1_data {
+    text-align: center;
+    width: 100%;
+}
+
+#p2_data {
+    text-align: center;
+    width: 100%;
+}
+
 .boton{
-    height: 10em;
+    height: 8em;
     width: 10em;
     background-image:url(../img/unpressed.png);
     background-size: cover;
@@ -85,5 +152,38 @@ img {
 /* ----------------------- FASE 4 ----------------------- */
 #fase4 {
     margin: auto;
+    width: 100vh;
+    height: 60vh;
+    background-image: url(../img/end.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    border: black solid 1px;
 }
 
+.end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fase4 img {
+    height: 20vh;
+    width: 20vh;
+}
+
+#winner {
+    color:rgb(255, 217, 0);
+    font-size: 2.5em;   
+}
+
+#fase4 input{
+    margin-top: 4vh;
+    font-family: '8-bit_pusabregular';
+    background-color: aquamarine;
+}
+
+#champ img {
+    margin-top: 7vh;
+    height: 10vh;
+    width: 10vh;
+}
