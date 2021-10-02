@@ -108,7 +108,23 @@ section {
 #race {
     height: 80vh;
     width: 17.5vw;
+    display: flex;
+    background-image: url(../img/road.jpg);
+    background-size: cover;
     border: black solid 1px;
+    justify-content: space-around;
+}
+
+#car1 {
+    height: 10vh;
+    position: relative;
+    bottom: -750px;
+}
+
+#car2 {
+    height: 10vh;
+    position: relative;
+    bottom: -750px;
 }
 
 #racer2 {

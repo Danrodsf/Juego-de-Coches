@@ -129,26 +129,33 @@ const selectCar = (car) => {
 
 // Funciones para mostrar visualmente la carrera
 const players = () => {
-    document.getElementById("racer1").innerHTML =
-        `<div id="p1_car">
-        <img src="img/${coche1.nombre}.png" alt="">
-    </div>
-    <div id="p1_data">
-        <p>${coche1.nombre}</p>
-        <p>${coche1.aceleracion}</p>
-        <p>${coche1.control}</p>
-        <p id="dist_recorrida1">${coche1.distanciaRecorrida}</p>
-    </div >`
-    document.getElementById("racer2").innerHTML =
-        `<div id="p2_car">
-        <img src="img/${coche2.nombre}.png" alt="">
-    </div>
-    <div id="p2_data">
-        <p>${coche2.nombre}</p>
-        <p>${coche2.aceleracion}</p>
-        <p>${coche2.control}</p>
-        <p id="dist_recorrida2">${coche2.distanciaRecorrida}</p>
-    </div >`;
+    document.getElementById("race_cont").innerHTML =
+        `<div id="racer1">
+            <div id="p1_car">
+                <img src="img/${coche1.nombre}.png" alt="">
+            </div>
+            <div id="p1_data">
+                <p>${coche1.nombre}</p>
+                <p>${coche1.aceleracion}</p>
+                <p>${coche1.control}</p>
+                <p id="dist_recorrida1">${coche1.distanciaRecorrida}</p>
+            </div >
+        </div>
+        <div id="race">
+            <img id="car1" src="img/${coche1.nombre}_r.png" alt="">
+            <img id="car2" src="img/${coche2.nombre}_r.png" alt="">
+        </div>
+        <div id="racer2">
+            <div id="p2_car">
+                <img src="img/${coche2.nombre}.png" alt="">
+            </div>
+            <div id="p2_data">
+                <p>${coche2.nombre}</p>
+                <p>${coche2.aceleracion}</p>
+                <p>${coche2.control}</p>
+                <p id="dist_recorrida2">${coche2.distanciaRecorrida}</p>
+            </div >
+        </div>`;
 }
 
 //Función para Acelerar coche1
@@ -160,6 +167,7 @@ const AcelerarCoche1 = () => {
 
     console.log(coche1.distanciaRecorrida);
     document.getElementById("dist_recorrida1").innerHTML = coche1.distanciaRecorrida
+    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 1.5 + -770 + "px"
 
 }
 
@@ -172,6 +180,7 @@ const AcelerarCoche2 = () => {
 
     console.log(coche2.distanciaRecorrida);
     document.getElementById("dist_recorrida2").innerHTML = coche2.distanciaRecorrida
+    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.5 + -770 + "px"
 
 }
 
