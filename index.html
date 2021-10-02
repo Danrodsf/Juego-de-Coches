@@ -11,21 +11,78 @@
 
 <body>
     <section id="fase1">
-        <div>
-            <input onclick="organizer('2')" type="button" value="Empezar">
-        </div>
+        <img onclick="organizer('2')" src="img/Main.jpg" alt="">
     </section>
     <section id="fase2" style="display:none">
-        <div>
-            <input onclick='selectCar("subaru")' type="button" value="Subaru">
-            <input onclick='selectCar("toyota")' type="button" value="Toyota">
-            <input onclick='selectCar("bmw")' type="button" value="Bmw">
-            <input onclick='selectCar("mercedes")' type="button" value="Mercedes">
+        <div class="main_coches">
+            <div class="indv_coche">
+                <img onclick='descripcion("1")' src="img/1.png" alt="">
+                <div style="display:none" id="desc1" class="desc">
+                    <p>descripcion 1</p>
+                    <img src="img/1.gif" alt="">
+                </div>
+                <input onclick='selectCar("1")' type="button" value="Incendio">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("2")' src="img/2.png" alt="">
+                <div style="display:none" id="desc2" class="desc">
+                    <p>descripcion 2</p>
+                    <img src="img/2.gif" alt="">
+                </div>
+                <input onclick='selectCar("2")' type="button" value="Trueno">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("3")' src="img/3.png" alt="">
+                <div style="display:none" id="desc3" class="desc">
+                    <p>descripcion 3</p>
+                    <img src="img/3.gif" alt="">
+                </div>
+                <input onclick='selectCar("3")' type="button" value="Terremoto">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("4")' src="img/4.png" alt="">
+                <div style="display:none" id="desc4" class="desc">
+                    <p>descripcion 4</p>
+                    <img src="img/4.gif" alt="">
+                </div>
+                <input onclick='selectCar("4")' type="button" value="Tsunami">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("5")' src="img/5.png" alt="">
+                <div style="display:none" id="desc5" class="desc">
+                    <p>descripcion 5</p>
+                    <img src="img/5.gif" alt="">
+                </div>
+                <input onclick='selectCar("5")' type="button" value="Tormenta">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("6")' src="img/6.png" alt="">
+                <div style="display:none" id="desc6" class="desc">
+                    <p>descripcion 6</p>
+                    <img src="img/6.gif" alt="">
+                </div>
+                <input onclick='selectCar("6")' type="button" value="Helada">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("7")' src="img/7.png" alt="">
+                <div style="display:none" id="desc7" class="desc">
+                    <p>descripcion 7</p>
+                    <img src="img/7.gif" alt="">
+                </div>
+                <input onclick='selectCar("7")' type="button" value="Maremoto">
+            </div>
+            <div class="indv_coche">
+                <img onclick='descripcion("8")' src="img/8.png" alt="">
+                <div style="display:none" id="desc8" class="desc">
+                    <p>descripcion 8</p>
+                    <img src="img/8.gif" alt="">
+                </div>
+                <input onclick='selectCar("8")' type="button" value="Avalancha">
+            </div>
         </div>
     </section>
     <section id="fase3" style="display:none">
-        <div>
-            <input onclick="Acelerar()" id="Acelerar" type="button" value="Acelerar">
+        <div onclick="Acelerar()" id="Acelerar" class="boton">
         </div>
     </section>
     <section id="fase4" style="display:none">

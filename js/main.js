@@ -1,19 +1,27 @@
 //Clase
 class Coche {
-    
-    constructor(name, speed, distanceToGoal) {
+
+    constructor(name, speed,) {
 
         this.name = name,
             this.speed = speed,
-            this.distanceToGoal = distanceToGoal
+            this.distanciaInicial = 0
+
     }
+
 }
 
 // Variables 
-let subaru = new Coche("subaru", 1.9, 1000);
-let toyota = new Coche("toyota", 1.8, 1000);
-let bmw = new Coche("bmw", 1.95, 1000);
-let mercedes = new Coche("mercedes", 1.85, 1000);
+const meta = 1000;
+
+let c1 = new Coche("Incendio", 1.9);
+let c2 = new Coche("Trueno", 1.8);
+let c3 = new Coche("Terremoto", 1.95);
+let c4 = new Coche("Tsunami", 1.85);
+let c5 = new Coche("Tormenta", 1.75);
+let c6 = new Coche("Helada", 1.92);
+let c7 = new Coche("Maremoto", 1.60);
+let c8 = new Coche("Avalancha", 1.65);
 
 let coche1 = "";
 let coche2 = "";
@@ -23,14 +31,18 @@ let ganador = document.getElementById("winner");
 //traductor
 let traductor = {
 
-    "subaru": subaru,
-    "toyota": toyota,
-    "bmw": bmw,
-    "mercedes": mercedes
+    "1": c1,
+    "2": c2,
+    "3": c3,
+    "4": c4,
+    "5": c5,
+    "6": c6,
+    "7": c7,
+    "8": c8
 
 }
 
-// Cambiar fases de juego
+//Función para Cambiar fases de juego
 const organizer = (arg_O) => {
 
     let fasewant = "fase" + arg_O;
@@ -46,10 +58,26 @@ const organizer = (arg_O) => {
     }
 
 }
+//Función para Descripcion de coches
+const descripcion = (arg_O) => {
 
-//Selecionar Coche
+    let fasewant = "desc" + arg_O;
+    let arrFases = ["desc1", "desc2", "desc3", "desc4", "desc5", "desc6", "desc7", "desc8"];
+
+    arrFases = arrFases.filter(val => !fasewant.includes(val));
+
+    document.getElementById(fasewant).style.display = "block";
+
+    for (let _f of arrFases) {
+
+        document.getElementById(_f).style.display = "none";
+    }
+
+}
+
+//Función para Selecionar Coche
 const selectCar = (car) => {
-    
+
     if (coche1 != "") {
 
         coche2 = traductor[car];
@@ -58,7 +86,7 @@ const selectCar = (car) => {
         setTimeout(() => {
 
             organizer("3")
-        },500)
+        }, 500)
 
     } else {
 
@@ -68,68 +96,68 @@ const selectCar = (car) => {
     }
 }
 
-//Acelerar coche1
+//Función para Acelerar coche1
 const AcelerarCoche1 = () => {
-
     let random = Math.floor(Math.random() * (150 - 50) + 50);
-    coche1.distanceToGoal -= parseInt(random * coche1.speed);
-
-    if (coche1.distanceToGoal > 0) {
-
-        console.log(coche1.distanceToGoal);
-
-    } else {
-
-        console.log(`El coche ${coche1} ha ganado`)
-        setTimeout(() => {
-
-            organizer("4")
-        },500)
-
-        ganador.innerHTML = `el Ganador es el ${coche1}`
-
-    }
+    coche1.distanciaInicial += parseInt(random * coche1.speed);
+    console.log(coche1.distanciaInicial);
 }
 
-//Acelerar coche2
+//Función para Acelerar coche2
 const AcelerarCoche2 = () => {
-
     let random = Math.floor(Math.random() * (150 - 50) + 50);
-    coche2.distanceToGoal -= parseInt(random * coche2.speed);
+    coche2.distanciaInicial += parseInt(random * coche2.speed);
+    console.log(coche2.distanciaInicial);
+}
 
-    if (coche2.distanceToGoal > 0) {
+//Función para verificar si la distancia de alguno ha pasado de 1000, y luego compara ambas distancias y declarar ganador al coche con mas distancia.
+const winner = () => {
 
-        console.log(coche2.distanceToGoal);
+    if (coche1.distanciaInicial < 1000 && coche2.distanciaInicial < 1000) {
+
+        console.log("la carrera continua");
 
     } else {
 
-        console.log(`El coche ${coche2} ha ganado`)
-        setTimeout(() => {
-            
-            organizer("4")
-        },500)
+        if (coche1.distanciaInicial > coche2.distanciaInicial && coche2.distanciaInicial < coche1.distanciaInicial) {
 
-        ganador.innerHTML =`el Ganador es el ${coche2}`
+            console.log(`El ganador es ${coche1.name}`);
+            setTimeout(() => {
 
+                organizer("4");
+            }, 500);
+            ganador.innerHTML = `El ganador es ${coche1.name}`;
+
+        } else {
+
+            console.log(`El ganador es ${coche2.name}`);
+            setTimeout(() => {
+
+                organizer("4");
+            }, 500);
+            ganador.innerHTML = `El ganador es ${coche2.name}`;
+
+        }
     }
-
 }
 
-//Boton de acelerar
-const Acelerar = () => {     
+//Función para Acelerar ambos coches a la vez.
+const Acelerar = () => {
 
     AcelerarCoche1();
+
     AcelerarCoche2();
+
+    winner();
+
 }
 
+//Función que Reinicia las variables y el Juego.
 const reset = () => {
-
+    coche1.distanciaInicial = 0;
+    coche2.distanciaInicial = 0;
     coche1 = "";
     coche2 = "";
-    subaru.distanceToGoal = 1000;
-    toyota.distanceToGoal = 1000;
-    bmw.distanceToGoal = 1000;
-    mercedes.distanceToGoal = 1000;
     organizer(1);
 
 }

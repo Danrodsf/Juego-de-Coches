@@ -3,32 +3,87 @@ body {
     height: 100vh;
     width: 100vw;
     display: flex;
+    background-color: rgb(24, 24, 24);
+    font-size: calc(12px + 0.5em);
 }
+
 section {
     display: flex;
     margin: auto;
-    height: 90vh;
-    width: 90vh;
-    background-color: black;
 }
-section div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.desc{
+    height: 10vh;
+    width: 10vw;
+    margin-top: 10vh;
+    color: blueviolet;
 }
-#fase1 {
-    background-color: blue;
-}
-#fase2 {
-    background-color: yellow;
-}
-#fase3 {
-    background-color: red;
-}
-#fase4 {
-    background-color: green;
+
+.desc img {
+    margin-top: 10vh;
 }
 
 input {
-    margin:auto;
+    height: 3vh;
+    width: 100%;
+    font-size: 1.5em;
+    background-color: blueviolet;
+    border-radius: 0.2em;
 }
+
+img {
+    width: 15vh;
+}
+
+
+/* ----------------------- FASE 1 ----------------------- */
+#fase1 {
+    display: flex;
+}
+
+#fase1 img {
+    width: 100vh;
+    margin:auto;
+    border: black solid 1px;
+}
+
+.indv_coche{
+    display: block;
+    text-align: center;    
+}
+
+/* ----------------------- FASE 2 ----------------------- */
+#fase2 {
+    margin: auto;
+}
+
+.main_coches {
+    display: flex;
+    justify-content: center;    
+}
+
+.indv_coche{
+    margin: auto;
+}
+
+/* ----------------------- FASE 3 ----------------------- */
+#fase3 {
+    margin: auto;
+}
+
+.boton{
+    height: 10em;
+    width: 10em;
+    background-image:url(../img/unpressed.png);
+    background-size: cover;
+}
+
+.boton:active {
+    background-image:url(../img/pressed.png);
+}
+
+/* ----------------------- FASE 4 ----------------------- */
+#fase4 {
+    margin: auto;
+}
+
