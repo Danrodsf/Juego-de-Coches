@@ -6,7 +6,8 @@ class Coche {
         this.nombre = nombre,
             this.aceleracion = aceleracion,
             this.control = control,
-            this.distanciaRecorrida = 0
+            this.distanciaRecorrida = 0,
+            this.partidasGanadas = 0
 
     }
 
@@ -139,6 +140,7 @@ const players = () => {
                 <p>${coche1.aceleracion}</p>
                 <p>${coche1.control}</p>
                 <p id="dist_recorrida1">${coche1.distanciaRecorrida}</p>
+                <p id="partidas1">${coche1.partidasGanadas}
             </div >
         </div>
         <div id="race">
@@ -154,6 +156,7 @@ const players = () => {
                 <p>${coche2.aceleracion}</p>
                 <p>${coche2.control}</p>
                 <p id="dist_recorrida2">${coche2.distanciaRecorrida}</p>
+                <p id="partidas2">${coche2.partidasGanadas}
             </div >
         </div>`;
 }
@@ -184,6 +187,17 @@ const AcelerarCoche2 = () => {
 
 }
 
+const siguientePartida = () => {
+    coche1.distanciaRecorrida = 0;
+    coche2.distanciaRecorrida = 0;
+    document.getElementById("car1").style.bottom = "-750px"
+    document.getElementById("car2").style.bottom = "-750px"
+    document.getElementById("dist_recorrida1").innerHTML = 0
+    document.getElementById("dist_recorrida2").innerHTML = 0
+    document.getElementById("partidas1").innerHTML = `${coche1.partidasGanadas}`
+    document.getElementById("partidas2").innerHTML = `${coche2.partidasGanadas}`
+}
+
 //Función para verificar si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declarar ganador al coche con mas distancia.
 const winner = () => {
 
@@ -196,27 +210,43 @@ const winner = () => {
         if (coche1.distanciaRecorrida > coche2.distanciaRecorrida && coche2.distanciaRecorrida < coche1.distanciaRecorrida) {
 
             console.log(`El ganador es ${coche1.nombre}`);
-            setTimeout(() => {
+            coche1.partidasGanadas++;
 
-                organizer("4");
+            if (coche1.partidasGanadas < 3) {
 
-            }, 1000);
+                siguientePartida();
 
-            ganador.innerHTML = `El ganador es ${coche1.nombre}!!!`;
-            champion.innerHTML = `<img src="img/${coche1.nombre}.png"></img>`
+            } else {
+
+                setTimeout(() => {
+
+                    organizer("4");
+
+                }, 1000);
+
+                ganador.innerHTML = `El ganador es ${coche1.nombre}!!!`;
+                champion.innerHTML = `<img src="img/${coche1.nombre}.png"></img>`
+            }
 
         } else {
 
             console.log(`El ganador es ${coche2.nombre}`);
-            setTimeout(() => {
+            coche2.partidasGanadas++;
 
-                organizer("4");
+            if (coche2.partidasGanadas < 3) {
 
-            }, 1000);
+                siguientePartida();
 
-            ganador.innerHTML = `El ganador es ${coche2.nombre}!!!`;
-            champion.innerHTML = `<img src="img/${coche2.nombre}.png"></img>`
+            } else {
+                setTimeout(() => {
 
+                    organizer("4");
+
+                }, 1000);
+
+                ganador.innerHTML = `El ganador es ${coche2.nombre}!!!`;
+                champion.innerHTML = `<img src="img/${coche2.nombre}.png"></img>`
+            }
         }
     }
 }
@@ -236,6 +266,8 @@ const Acelerar = () => {
 const reset = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
+    coche1.partidasGanadas = 0
+    coche2.partidasGanadas = 0
     document.getElementById("car1").style.bottom = "-750px"
     document.getElementById("car2").style.bottom = "-750px"
     coche1 = "";
