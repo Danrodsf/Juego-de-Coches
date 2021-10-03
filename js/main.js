@@ -232,12 +232,12 @@ const Acelerar = () => {
 
 }
 
-
-
 //Función que Reinicia las variables y el Juego.
 const reset = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
+    document.getElementById("car1").style.bottom = "-750px"
+    document.getElementById("car2").style.bottom = "-750px"
     coche1 = "";
     coche2 = "";
     organizer(1);
