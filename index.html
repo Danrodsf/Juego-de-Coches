@@ -17,61 +17,59 @@
     <section id="fase2" style="display:none">
         <div class="main_coches">
             <div class="indv_coche" id="1">
-                <img onclick='descripcion("1")' id="img1" class="cars" src="img/Incendio.png" alt="">
+                <img onmouseenter='descripcion("1")' id="img1" class="cars" src="img/Incendio.png" alt="">
+                <img onclick='selectCar("1")' class="btn" id="btn1" src="img/Incendio_btn.png">
                 <div style="display:none" id="desc1" class="desc">
                 </div>
-                <img onclick='selectCar("1")' class="btn" id="btn1" src="img/Incendio_btn.png">
             </div>
             <div class="indv_coche" id="2">
-                <img onclick='descripcion("2")' id="img2" class="cars" src="img/Trueno.png" alt="">
+                <img onmouseenter='descripcion("2")' id="img2" class="cars" src="img/Trueno.png" alt="">
+                <img onclick='selectCar("2")' class="btn" id="btn2" src="img/Trueno_btn.png">
                 <div style="display:none" id="desc2" class="desc">
                 </div>
-                <img onclick='selectCar("2")' class="btn" id="btn2" src="img/Trueno_btn.png">
             </div>
             <div class="indv_coche" id="3">
-                <img onclick='descripcion("3")' id="img3" class="cars" src="img/Terremoto.png" alt="">
+                <img onmouseenter='descripcion("3")' id="img3" class="cars" src="img/Terremoto.png" alt="">
+                <img onclick='selectCar("3")' class="btn" id="btn3" src="img/Terremoto_btn.png">
                 <div style="display:none" id="desc3" class="desc">
                 </div>
-                <img onclick='selectCar("3")' class="btn" id="btn3" src="img/Terremoto_btn.png">
             </div>
             <div class="indv_coche" id="4">
-                <img onclick='descripcion("4")' id="img4" class="cars" src="img/Tsunami.png" alt="">
+                <img onmouseenter='descripcion("4")' id="img4" class="cars" src="img/Tsunami.png" alt="">
+                <img onclick='selectCar("4")' class="btn" id="btn4" src="img/Tsunami_btn.png">
                 <div style="display:none" id="desc4" class="desc">
                 </div>
-                <img onclick='selectCar("4")' class="btn" id="btn4" src="img/Tsunami_btn.png">
             </div>
             <div class="indv_coche" id="5">
-                <img onclick='descripcion("5")' id="img5" class="cars" src="img/Tormenta.png" alt="">
+                <img onmouseenter='descripcion("5")' id="img5" class="cars" src="img/Tormenta.png" alt="">
+                <img onclick='selectCar("5")' class="btn" id="btn5" src="img/Tormenta_btn.png">
                 <div style="display:none" id="desc5" class="desc">
                 </div>
-                <img onclick='selectCar("5")' class="btn" id="btn5" src="img/Tormenta_btn.png">
             </div>
             <div class="indv_coche" id="6">
-                <img onclick='descripcion("6")' id="img6" class="cars" src="img/Helada.png" alt="">
+                <img onmouseenter='descripcion("6")' id="img6" class="cars" src="img/Helada.png" alt="">
+                <img onclick='selectCar("6")' class="btn" id="btn6" src="img/Helada_btn.png">
                 <div style="display:none" id="desc6" class="desc">
                 </div>
-                <img onclick='selectCar("6")' class="btn" id="btn6" src="img/Helada_btn.png">
             </div>
             <div class="indv_coche" id="7">
-                <img onclick='descripcion("7")' id="img7" class="cars" src="img/Maremoto.png" alt="">
+                <img onmouseenter='descripcion("7")' id="img7" class="cars" src="img/Maremoto.png" alt="">
+                <img onclick='selectCar("7")' class="btn" id="btn7" src="img/Maremoto_btn.png">
                 <div style="display:none" id="desc7" class="desc">
                 </div>
-                <img onclick='selectCar("7")' class="btn" id="btn7" src="img/Maremoto_btn.png">
             </div>
             <div class="indv_coche" id="8">
-                <img onclick='descripcion("8")' id="img" class="cars" src="img/Avalancha.png" alt="">
+                <img onmouseenter='descripcion("8")' id="img" class="cars" src="img/Avalancha.png" alt="">
+                <img onclick='selectCar("8")' class="btn" id="btn8" src="img/Avalancha_btn.png">
                 <div style="display:none" id="desc8" class="desc">
                 </div>
-                <img onclick='selectCar("8")' class="btn" id="btn8" src="img/Avalancha_btn.png">
             </div>
         </div>
     </section>
     <section id="fase3" style="display:none">
-        <div class="main_race">
-            <div id="race_cont">
-            </div>
-            <div onclick="Acelerar()" id="Acelerar" class="boton"></div>
+        <div id="race_cont">
         </div>
+        <div onclick="Acelerar()" id="Acelerar" class="boton"></div>
     </section>
     <section id="fase4" style="display:none">
         <div class="main end">

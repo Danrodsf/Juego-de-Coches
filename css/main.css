@@ -8,6 +8,7 @@
 }
 
 body {
+    user-select: none; /* Previene la seleccion al hacer doble click */
     margin: 0;
     height: 100vh;
     width: 100vw;
@@ -27,7 +28,8 @@ section {
 
 /* ----------------------- FASE 1 ----------------------- */
 #fase1 img {
-    width: 100vh;
+    width: 80em;
+    height: 65em;
     margin:auto;
     border: black solid 1px;
 }
@@ -41,10 +43,12 @@ section {
 .main_coches {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 5em;
-    height: 80vh;
-    width: 37.5vw;
-    
+    width: 80em;
+    height: 65em;
+    background-image: url(../img/eleccion.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 2.5em;
 }
 
 .indv_coche{
@@ -54,26 +58,22 @@ section {
 }
 
 .cars {
-    height: 10vh;
-    width: 5vw;
+    height: 7em;
+    min-width: 5em;
 }
 
 .desc{
     height: 3vh;
     color: white;
     padding:1em 0 0 0;
-    font-size: 0.55em;
-}
-
-.desc img {
-    margin-top: 10vh;
-    height: 20em;
+    font-size: 0.8em;
 }
 
 .btn {
-    height: 4vh;
-    width: 5vw;
-    padding-top:5vh;
+    height: 4em;
+    width: 7em;
+    padding-top:1em;
+    cursor: pointer;
 }
 
 .greyscale {
@@ -82,80 +82,78 @@ section {
 }
 /* ----------------------- FASE 3 ----------------------- */
 #fase3 {
-    margin: auto;
-}
-
-.main_race{
-    height: 80vh;
-    width: 37.5vw;
-
+    border: black solid 1px;
+    color: white;
+    background-image: url(../img/carrera.jpg);
 }
 
 #race_cont {
+    width: 80em;
+    height: 65em;
     display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    
 }
 
 #racer1 {
+    width: 25em;
     display: flex;
     flex-direction: column;
-    height: 80vh;
-    width: 10vw;
     justify-content: center;
     align-items: center;
 }
 
 #race {
-    height: 80vh;
-    width: 17.5vw;
+    width: 30em;
     display: flex;
     background-image: url(../img/road.jpg);
     background-size: cover;
-    border: black solid 1px;
     justify-content: space-around;
 }
 
 #car1 {
-    height: 10vh;
+    height: 10em;
     position: relative;
-    bottom: -750px;
+    bottom: -850px;
 }
 
 #car2 {
-    height: 10vh;
+    height: 10em;
     position: relative;
-    bottom: -750px;
+    bottom: -850px;
 }
 
 #racer2 {
+    width: 25em;
     display: flex;
     flex-direction: column;
-    height: 80vh;
-    width: 10vw;
     justify-content: center;
     align-items: center;
 }
 
 #p1_car img{
-    width: 15vh;
+    width: 15em;
 }
 
 #p2_car img{
-    width: 15vh;
+    width: 15em;
 }
 
 #p1_data {
     text-align: center;
-    width: 100%;
 }
 
 #p2_data {
     text-align: center;
-    width: 100%;
 }
 
 .boton{
+    position:absolute;
     height: 8em;
     width: 10em;
+    left: 35em;
+    bottom: 1em;
     background-image:url(../img/unpressed.png);
     background-size: cover;
 }
@@ -169,7 +167,7 @@ section {
     margin: auto;
     width: 100vh;
     height: 60vh;
-    background-image: url(../img/end.jpg);
+    background-image: url(../img/fin.jpg);
     background-size: cover;
     background-position: bottom center;
     border: black solid 1px;
