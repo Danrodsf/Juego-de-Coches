@@ -34,11 +34,6 @@ section {
     border: black solid 1px;
 }
 
-.indv_coche{
-    display: block;
-    text-align: center;  
-}
-
 /* ----------------------- FASE 2 ----------------------- */
 .main_coches {
     display: grid;
@@ -55,6 +50,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .cars {
@@ -184,7 +180,7 @@ section {
     width: 20vh;
 }
 
-#winner {
+#ganador {
     color:rgb(255, 217, 0);
     font-size: 2.5em;   
 }
@@ -195,7 +191,7 @@ section {
     background-color: aquamarine;
 }
 
-#champ img {
+#campeon img {
     margin-top: 7vh;
     height: 10vh;
     width: 10vh;

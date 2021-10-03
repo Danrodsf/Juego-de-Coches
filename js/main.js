@@ -25,11 +25,11 @@ let c8 = new Coche("Avalancha", 1.65, 9);
 
 const meta = 1000;
 
-let coche1 = "";
-let coche2 = "";
+let coche1 = ""; //jugador 1
+let coche2 = ""; //jugador 2
 
-let ganador = document.getElementById("winner");
-let champion = document.getElementById("champ");
+let ganador = document.getElementById("ganador");
+let campeon = document.getElementById("campeon");
 
 //traductor
 let traductor = {
@@ -45,55 +45,55 @@ let traductor = {
 
 }
 
-//Función para Cambiar fases de juego
-const organizer = (arg_O) => {
+//Función para cambiar fases de juego
+const capas = (num) => {
 
-    let fasewant = "fase" + arg_O;
-    let arrFases = ["fase1", "fase2", "fase3", "fase4"];
+    let faseSolicitada = "fase" + num;
+    let arrayFases = ["fase1", "fase2", "fase3", "fase4"];
 
-    arrFases = arrFases.filter(val => !fasewant.includes(val));
+    arrayFases = arrayFases.filter(val => !faseSolicitada.includes(val));
 
-    document.getElementById(fasewant).style.display = "block";
+    document.getElementById(faseSolicitada).style.display = "block";
 
-    for (let _f of arrFases) {
+    for (let _f of arrayFases) {
 
         document.getElementById(_f).style.display = "none";
     }
 
 }
 
-//Función para Descripcion de coches
-const descripcion = (arg_O) => {
+//Función para descripción de coches
+const descripcion = (num) => {
 
-    let fasewant = "desc" + arg_O;
-    let arrFases = ["desc1", "desc2", "desc3", "desc4", "desc5", "desc6", "desc7", "desc8"];
-    let gif = "img/" + arg_O + ".gif";
-    let select = traductor[arg_O];
-    let descripcion = document.getElementById(fasewant);
+    let faseSolicitada = "desc" + num;
+    let arrayFases = ["desc1", "desc2", "desc3", "desc4", "desc5", "desc6", "desc7", "desc8"];
+    let gif = "img/" + num + ".gif";
+    let seleccion = traductor[num];
+    let descripcion = document.getElementById(faseSolicitada);
 
-    arrFases = arrFases.filter(val => !fasewant.includes(val));
+    arrayFases = arrayFases.filter(val => !faseSolicitada.includes(val));
 
     descripcion.style.display = "block";
-    descripcion.innerHTML = `<p>Nombre: ${select.nombre}</br>Velocidad: ${select.aceleracion}</br>Manejo: ${select.control}</p><img src="${gif}">`;
+    descripcion.innerHTML = `<p>Nombre: ${seleccion.nombre}</br>Velocidad: ${seleccion.aceleracion}</br>Manejo: ${seleccion.control}</p><img src="${gif}">`;
 
-    for (let _f of arrFases) {
+    for (let _f of arrayFases) {
 
         document.getElementById(_f).style.display = "none";
     }
 
 }
 
-//Función para Selecionar Coche
+//Función para seleccionar Coche
 const selectCar = (car) => {
 
     let btn = "btn" + car;
     let cocheElegido = document.getElementById(car);
-    const lockCoche = () => {
+    const bloqCoche = () => {
 
         cocheElegido.classList.add("greyscale");
         document.getElementById(btn).disabled = 'true';
     }
-    const unLockCoche = () => {
+    const desbloqCoche = () => {
 
         cocheElegido.classList.remove("greyscale");
         document.getElementById(btn).disabled = 'false';
@@ -103,12 +103,12 @@ const selectCar = (car) => {
 
         coche2 = traductor[car];
         console.log("el coche2 es", coche2);
-        lockCoche();
+        bloqCoche();
 
         setTimeout(() => {
 
-            organizer("3");
-            unLockCoche();
+            capas("3");
+            desbloqCoche();
 
         }, 1000);
 
@@ -116,21 +116,21 @@ const selectCar = (car) => {
 
         coche1 = traductor[car];
         console.log("el coche1 es", coche1);
-        lockCoche();
+        bloqCoche();
 
         setTimeout(() => {
 
-            unLockCoche();
+            desbloqCoche();
 
         }, 10000);
 
     }
-    players();
+    jugadores();
 }
 
 
 // Funciones para mostrar visualmente la carrera
-const players = () => {
+const jugadores = () => {
     document.getElementById("race_cont").innerHTML =
         `
         <div id="racer1">
@@ -164,32 +164,32 @@ const players = () => {
         `;
 }
 
-//Función para Acelerar coche1
+//Función para acelerar coche1
 const AcelerarCoche1 = () => {
 
-    let random = Math.floor(Math.random() * (150 - 50) + 50);
+    let random = Math.floor(Math.random() * (25 - 10) + 10);
 
-    coche1.distanciaRecorrida += parseInt(random * coche1.aceleracion);
+    coche1.distanciaRecorrida += parseInt((random * coche1.aceleracion) + (random * coche1.control));
 
     console.log(coche1.distanciaRecorrida);
     document.getElementById("dist_recorrida1").innerHTML = `Distancia Recorrida: ${coche1.distanciaRecorrida}`;
-    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 1.5 + -800 + "px";
+    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 1.3 + -900 + "px";
 
 }
 
-//Función para Acelerar coche2
+//Función para acelerar coche2
 const AcelerarCoche2 = () => {
 
-    let random = Math.floor(Math.random() * (150 - 50) + 50);
+    let random = Math.floor(Math.random() * (25 - 10) + 10);
 
-    coche2.distanciaRecorrida += parseInt(random * coche2.aceleracion);
+    coche2.distanciaRecorrida += parseInt((random * coche1.aceleracion) + (random * coche1.control));
 
     console.log(coche2.distanciaRecorrida);
     document.getElementById("dist_recorrida2").innerHTML = `Distancia Recorrida: ${coche2.distanciaRecorrida}`;
-    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.5 + -800 + "px";
+    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.3 + -900 + "px";
 
 }
-
+// Función para aplicar siguiente partida (Básicamente Reinicia los valores sin pasar a la siguiente Fase del juego)
 const siguientePartida = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
@@ -199,8 +199,11 @@ const siguientePartida = () => {
     document.getElementById("partidas2").innerHTML = `Partidas Ganadas: ${coche2.partidasGanadas}`;
 }
 
-//Función para verificar si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declarar ganador al coche con mas distancia.
-const winner = () => {
+//Función para verificar si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declarar ganador al coche con más distancia.
+// Adicionalmente verifica si el ganador ya tiene más de 3 partidas ganadas para así pasar a la siguiente fase, de lo contrario, le aumenta en 1 las
+// partidas ganadas.
+
+const comparar = () => {
 
     if (coche1.distanciaRecorrida < meta && coche2.distanciaRecorrida < meta) {
 
@@ -225,12 +228,12 @@ const winner = () => {
 
                 setTimeout(() => {
 
-                    organizer("4");
+                    capas("4");
 
                 }, 1000);
 
                 ganador.innerHTML = `El ganador es ${coche1.nombre}!!!`;
-                champion.innerHTML = `<img src="img/${coche1.nombre}.png"></img>`;
+                campeon.innerHTML = `<img src="img/${coche1.nombre}.png"></img>`;
             }
 
         } else {
@@ -249,12 +252,12 @@ const winner = () => {
             } else {
                 setTimeout(() => {
 
-                    organizer("4");
+                    capas("4");
 
                 }, 1000);
 
                 ganador.innerHTML = `El ganador es ${coche2.nombre}!!!`;
-                champion.innerHTML = `<img src="img/${coche2.nombre}.png"></img>`;
+                campeon.innerHTML = `<img src="img/${coche2.nombre}.png"></img>`;
             }
         }
     }
@@ -267,7 +270,7 @@ const Acelerar = () => {
 
     AcelerarCoche2();
 
-    winner();
+    comparar();
 
 }
 
@@ -281,6 +284,6 @@ const reset = () => {
     document.getElementById("car2").style.bottom = "-850px";
     coche1 = "";
     coche2 = "";
-    organizer(1);
+    capas(1);
 
 }
