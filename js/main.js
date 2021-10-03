@@ -74,7 +74,7 @@ const descripcion = (num) => {
     arrayFases = arrayFases.filter(val => !faseSolicitada.includes(val));
 
     descripcion.style.display = "block";
-    descripcion.innerHTML = `<p>Nombre: ${seleccion.nombre}</br>Velocidad: ${seleccion.aceleracion}</br>Manejo: ${seleccion.control}</p><img src="${gif}">`;
+    descripcion.innerHTML = `<p>Nombre: ${seleccion.nombre}</br>Velocidad: ${seleccion.aceleracion}</br>Manejo: ${seleccion.control}</p><img class="gif" src="${gif}">`;
 
     for (let _f of arrayFases) {
 

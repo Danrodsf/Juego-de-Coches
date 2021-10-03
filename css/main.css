@@ -43,10 +43,10 @@ section {
     background-image: url(../img/eleccion.jpg);
     background-size: cover;
     background-position: center;
-    padding-top: 2.5em;
 }
 
 .indv_coche{
+    padding-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +59,7 @@ section {
 }
 
 .desc{
-    height: 3vh;
+    height: 1em;
     color: white;
     padding:1em 0 0 0;
     font-size: 0.8em;
@@ -75,6 +75,10 @@ section {
 .greyscale {
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
+}
+
+.gif{
+    width: 13em;
 }
 /* ----------------------- FASE 3 ----------------------- */
 #fase3 {
@@ -161,8 +165,8 @@ section {
 /* ----------------------- FASE 4 ----------------------- */
 #fase4 {
     margin: auto;
-    width: 100vh;
-    height: 60vh;
+    width: 80em;
+    height: 65em;
     background-image: url(../img/fin.jpg);
     background-size: cover;
     background-position: bottom center;
@@ -176,8 +180,9 @@ section {
 }
 
 #fase4 img {
-    height: 20vh;
-    width: 20vh;
+    padding-top: 8em;
+    height: 30vh;
+    width: 30vh;
 }
 
 #ganador {
@@ -186,13 +191,12 @@ section {
 }
 
 #fase4 input{
-    margin-top: 4vh;
+    margin-top: 5em;
     font-family: '8-bit_pusabregular';
-    background-color: aquamarine;
+    background-color: rgb(97, 244, 255);
 }
 
 #campeon img {
-    margin-top: 7vh;
-    height: 10vh;
-    width: 10vh;
+    height: 15vh;
+    width: 15vh;
 }
