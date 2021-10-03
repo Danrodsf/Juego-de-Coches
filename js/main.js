@@ -109,7 +109,7 @@ const selectCar = (car) => {
 
             capas("3");
             desbloqCoche();
-
+            jugadores();
         }, 1000);
 
     } else {
@@ -125,7 +125,7 @@ const selectCar = (car) => {
         }, 10000);
 
     }
-    jugadores();
+
 }
 
 
