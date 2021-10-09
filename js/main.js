@@ -1,3 +1,8 @@
+/* Twilight Racing
+Version: 1.0
+Autor: Daniel Rodriguez
+*/
+
 //Clase
 class Coche {
 
@@ -45,7 +50,7 @@ let traductor = {
 
 }
 
-//Función para cambiar fases de juego
+//------------------------ Función para cambiar fases de juego ------------------------//
 const capas = (num) => {
 
     let faseSolicitada = "fase" + num;
@@ -62,7 +67,7 @@ const capas = (num) => {
 
 }
 
-//Función para descripción de coches
+//------------------------ Función para descripción de coches ------------------------//
 const descripcion = (num) => {
 
     let faseSolicitada = "desc" + num;
@@ -83,7 +88,7 @@ const descripcion = (num) => {
 
 }
 
-//Función para seleccionar Coche
+//------------------------Función para seleccionar Coche ------------------------//
 const selectCar = (car) => {
 
     let btn = "btn" + car;
@@ -129,8 +134,7 @@ const selectCar = (car) => {
 
 }
 
-
-// Funciones para mostrar visualmente la carrera
+//------------------------ Funciones para mostrar visualmente la carrera ------------------------//
 const jugadores = () => {
     document.getElementById("race_cont").innerHTML =
         `
@@ -166,7 +170,7 @@ const jugadores = () => {
         `;
 }
 
-//Función para acelerar coche1
+//------------------------ Función para acelerar coche1 ------------------------//
 const AcelerarCoche1 = () => {
 
     let random = Math.floor(Math.random() * (25 - 10) + 10);
@@ -179,7 +183,7 @@ const AcelerarCoche1 = () => {
 
 }
 
-//Función para acelerar coche2
+//------------------------ Función para acelerar coche2 ------------------------//
 const AcelerarCoche2 = () => {
 
     let random = Math.floor(Math.random() * (25 - 10) + 10);
@@ -191,7 +195,8 @@ const AcelerarCoche2 = () => {
     document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.3 + -900 + "px";
 
 }
-// Función para aplicar siguiente partida (Básicamente Reinicia los valores sin pasar a la siguiente Fase del juego)
+//------------------------ Función para aplicar siguiente partida ------------------------//
+// (Básicamente Reinicia los valores sin pasar a la siguiente Fase del juego) //
 const siguientePartida = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
@@ -201,9 +206,11 @@ const siguientePartida = () => {
     document.getElementById("partidas2").innerHTML = `Partidas Ganadas: ${coche2.partidasGanadas}`;
 }
 
-//Función para verificar si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declarar ganador al coche con más distancia.
-// Adicionalmente verifica si el ganador ya tiene más de 3 partidas ganadas para así pasar a la siguiente fase, de lo contrario, le aumenta en 1 las
-// partidas ganadas.
+//------------------------ Función para verificar el ganador ------------------------//
+//Verifica si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declarar 
+//ganador al coche con más distancia. //
+// Adicionalmente verifica si el ganador ya tiene más de 3 partidas ganadas para así pasar a la siguiente
+// fase, de lo contrario, le aumenta en 1 las partidas ganadas. // 
 
 const comparar = () => {
 
@@ -268,7 +275,7 @@ const comparar = () => {
     }
 }
 
-//Función para Acelerar ambos coches a la vez.
+//------------------------ Función para Acelerar ambos coches a la vez. ------------------------//
 const Acelerar = () => {
 
     AcelerarCoche1();
@@ -279,7 +286,7 @@ const Acelerar = () => {
 
 }
 
-//Función que Reinicia las variables y el Juego.
+//------------------------ Función que Reinicia las variables y el Juego. ------------------------//
 const reset = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
