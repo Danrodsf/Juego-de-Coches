@@ -145,11 +145,13 @@ const jugadores = () => {
                 <p id="dist_recorrida1">Distancia Recorrida: ${coche1.distanciaRecorrida}</p>
                 <p id="partidas1">Partidas Ganadas: ${coche1.partidasGanadas}
             </div >
+            <div class="preBoton">
+                <div onclick="Acelerar()" id="Acelerar" class="boton"></div>
+            </div>
         </div>
         <div id="race">
             <img id="car1" src="img/${coche1.nombre}_r.png" alt="">
             <img id="car2" src="img/${coche2.nombre}_r.png" alt="">
-            <div onclick="Acelerar()" id="Acelerar" class="boton"></div>
         </div>
         <div id="racer2">
             <div id="p2_car">
@@ -175,7 +177,7 @@ const AcelerarCoche1 = () => {
 
     console.log(coche1.distanciaRecorrida);
     document.getElementById("dist_recorrida1").innerHTML = `Distancia Recorrida: ${coche1.distanciaRecorrida}`;
-    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 1.3 + -900 + "px";
+    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 1.6 + -750 + "px";
 
 }
 
@@ -188,20 +190,20 @@ const AcelerarCoche2 = () => {
 
     console.log(coche2.distanciaRecorrida);
     document.getElementById("dist_recorrida2").innerHTML = `Distancia Recorrida: ${coche2.distanciaRecorrida}`;
-    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.3 + -900 + "px";
+    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.6 + -750 + "px";
 
 }
 // Función para aplicar siguiente partida (Básicamente Reinicia los valores sin pasar a la siguiente Fase del juego)
 const siguientePartida = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
-    document.getElementById("car1").style.bottom = "-850px";
-    document.getElementById("car2").style.bottom = "-850px";
+    document.getElementById("car1").style.bottom = "-750px";
+    document.getElementById("car2").style.bottom = "-750px";
     document.getElementById("partidas1").innerHTML = `Partidas Ganadas: ${coche1.partidasGanadas}`;
     document.getElementById("partidas2").innerHTML = `Partidas Ganadas: ${coche2.partidasGanadas}`;
 }
 
-//Función para verificar si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declarar ganador al coche con más distancia.
+//Función para verificar si la distancia de alguno ha pasado de la meta, y luego compara ambas distancias y declara ganador al coche con más distancia.
 // Adicionalmente verifica si el ganador ya tiene más de 3 partidas ganadas para así pasar a la siguiente fase, de lo contrario, le aumenta en 1 las
 // partidas ganadas.
 
@@ -285,8 +287,8 @@ const reset = () => {
     coche2.distanciaRecorrida = 0;
     coche1.partidasGanadas = 0;
     coche2.partidasGanadas = 0;;
-    document.getElementById("car1").style.bottom = "-850px";
-    document.getElementById("car2").style.bottom = "-850px";
+    document.getElementById("car1").style.bottom = "-750px";
+    document.getElementById("car2").style.bottom = "-750px";
     coche1 = "";
     coche2 = "";
     capas(1);

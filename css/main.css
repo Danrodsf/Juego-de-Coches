@@ -7,18 +7,31 @@
 
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     user-select: none; /* Previene la seleccion al hacer doble click */
-    margin: 0;
-    height: 95vh;
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(24, 24, 24);;
     font-family: '8-bit_pusabregular';
 }
 
 section {
     display: flex;
     margin: auto;
+    height: 85%;
+    width: 65%;
+    border: black solid 1px;
+
 }
 
 .main {
@@ -27,18 +40,16 @@ section {
 
 /* ----------------------- FASE 1 ----------------------- */
 #fase1 img {
-    width: 80em;
-    height: 65em;
-    margin:auto;
-    border: black solid 1px;
+    height: 100%;
+    width: 100%;
 }
 
 /* ----------------------- FASE 2 ----------------------- */
 .main_coches {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 80em;
-    height: 65em;
+    width: 100%;
+    height: 100%;
     background-image: url(../img/eleccion.jpg);
     background-size: cover;
     background-position: center;
@@ -84,11 +95,13 @@ section {
     border: black solid 1px;
     color: white;
     background-image: url(../img/carrera.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #race_cont {
-    width: 80em;
-    height: 65em;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
@@ -113,14 +126,14 @@ section {
 #car1 {
     height: 10em;
     position: relative;
-    bottom: -850px;
+    bottom: -750px;
     left: 2em;
 }
 
 #car2 {
     height: 10em;
     position: relative;
-    bottom: -850px;
+    bottom: -750px;
     right: -8em;
 }
 
@@ -148,12 +161,18 @@ section {
     text-align: center;
 }
 
+.preBoton {  /* Esto es solo para poder usar posicion relativa "sin ocupar espacio" */
+    position: relative;
+    height: 0;
+    width: 0;
+}
+
 .boton{
     position:relative;
     height: 8em;
     width: 10em;
-    left: -37em;
-    top: 57em;
+    right: 5em;
+    top: 7em;
     background-image:url(../img/unpressed.png);
     background-size: cover;
 }
@@ -165,8 +184,6 @@ section {
 /* ----------------------- FASE 4 ----------------------- */
 #fase4 {
     margin: auto;
-    width: 80em;
-    height: 65em;
     background-image: url(../img/fin.jpg);
     background-size: cover;
     background-position: bottom center;
@@ -174,6 +191,8 @@ section {
 }
 
 .end {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -197,6 +216,6 @@ section {
 }
 
 #campeon img {
-    height: 15vh;
-    width: 15vh;
+    width: 15em;
+    height: 20em;
 }
