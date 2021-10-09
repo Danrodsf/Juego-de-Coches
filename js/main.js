@@ -149,7 +149,7 @@ const jugadores = () => {
         <div id="race">
             <img id="car1" src="img/${coche1.nombre}_r.png" alt="">
             <img id="car2" src="img/${coche2.nombre}_r.png" alt="">
-            <img onclick="Acelerar()" id="Acelerar" class="boton"></div>
+            <div onclick="Acelerar()" id="Acelerar" class="boton"></div>
         </div>
         <div id="racer2">
             <div id="p2_car">

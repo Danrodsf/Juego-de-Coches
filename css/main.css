@@ -108,19 +108,20 @@ section {
     display: flex;
     background-image: url(../img/road.jpg);
     background-size: cover;
-    justify-content: space-around;
 }
 
 #car1 {
     height: 10em;
     position: relative;
     bottom: -850px;
+    left: 2em;
 }
 
 #car2 {
     height: 10em;
     position: relative;
     bottom: -850px;
+    right: -8em;
 }
 
 #racer2 {
@@ -148,11 +149,11 @@ section {
 }
 
 .boton{
-    position:absolute;
+    position:relative;
     height: 8em;
     width: 10em;
-    left: 35em;
-    bottom: 10em;
+    left: -37em;
+    top: 57em;
     background-image:url(../img/unpressed.png);
     background-size: cover;
 }
