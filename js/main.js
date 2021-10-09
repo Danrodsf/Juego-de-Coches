@@ -91,12 +91,12 @@ const selectCar = (car) => {
     const bloqCoche = () => {
 
         cocheElegido.classList.add("greyscale");
-        document.getElementById(btn).disabled = 'true';
+        document.getElementById(btn).style.display = 'none';
     }
     const desbloqCoche = () => {
 
         cocheElegido.classList.remove("greyscale");
-        document.getElementById(btn).disabled = 'false';
+        document.getElementById(btn).style.display = 'block';
     }
 
     if (coche1 != "") {
@@ -110,6 +110,7 @@ const selectCar = (car) => {
             capas("3");
             desbloqCoche();
             jugadores();
+
         }, 1000);
 
     } else {
@@ -148,6 +149,7 @@ const jugadores = () => {
         <div id="race">
             <img id="car1" src="img/${coche1.nombre}_r.png" alt="">
             <img id="car2" src="img/${coche2.nombre}_r.png" alt="">
+            <img onclick="Acelerar()" id="Acelerar" class="boton"></div>
         </div>
         <div id="racer2">
             <div id="p2_car">
@@ -210,17 +212,19 @@ const comparar = () => {
         console.log("la carrera continua");
 
     } else {
-
+        document.getElementById("Acelerar").style.display = 'none';
         if (coche1.distanciaRecorrida > coche2.distanciaRecorrida && coche2.distanciaRecorrida < coche1.distanciaRecorrida) {
 
             console.log(`El ganador es ${coche1.nombre}`);
             coche1.partidasGanadas++;
+
 
             if (coche1.partidasGanadas < 3) {
 
                 setTimeout(() => {
 
                     siguientePartida();
+                    document.getElementById("Acelerar").style.display = 'flex';
 
                 }, 500);
 
@@ -246,6 +250,7 @@ const comparar = () => {
                 setTimeout(() => {
 
                     siguientePartida();
+                    document.getElementById("Acelerar").style.display = 'flex';
 
                 }, 500);
 
@@ -279,7 +284,7 @@ const reset = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
     coche1.partidasGanadas = 0;
-    coche2.partidasGanadas = 0;
+    coche2.partidasGanadas = 0;;
     document.getElementById("car1").style.bottom = "-850px";
     document.getElementById("car2").style.bottom = "-850px";
     coche1 = "";
