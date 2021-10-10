@@ -1,3 +1,11 @@
+/*
+Twilight Racing
+Autor: Daniel Rodriguez
+Version: 1.0
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------------ */
+
 @font-face {
     font-family: '8-bit_pusabregular';
     src: url('../fonts/8-bit-pusab-webfont.woff2') format('woff2'),
@@ -28,13 +36,13 @@ body {
     font-family: '8-bit_pusabregular';
 }
 
-/* ----------------------- FASE 1 ----------------------- */
-#fase1 {
+.main {
     margin: auto;
     height: 65em;
     width: 80em;
 }
 
+/* ----------------------- FASE 1 ----------------------- */
 #fase1 img {
     height: 100%;
     width: 100%;
@@ -42,9 +50,6 @@ body {
 
 /* ----------------------- FASE 2 ----------------------- */
 #fase2 {
-    margin: auto;
-    height: 65em;
-    width: 80em;
     background-image: url(../img/eleccion.jpg);
     background-size: cover;
     background-position: center;
@@ -93,9 +98,6 @@ body {
 }
 /* ----------------------- FASE 3 ----------------------- */
 #fase3 {
-    margin: auto;
-    height: 65em;
-    width: 80em;
     border: black solid 1px;
     color: white;
     background-image: url(../img/carrera.jpg);
@@ -187,9 +189,6 @@ body {
 
 /* ----------------------- FASE 4 ----------------------- */
 #fase4 {
-    height: 65em;
-    width: 80em;
-    margin: auto;
     background-image: url(../img/fin.jpg);
     background-size: cover;
     background-position: bottom center;
@@ -226,20 +225,20 @@ body {
     height: 10em;
 }
 
-/* Media Queries */
+/* ----------------------- Media Queries ----------------------- */
 
 @media (max-width: 1000px){
     body{
-        font-size: 8px;
+        font-size: 11px;
     }
 }
-@media (max-width: 748px){
+@media (max-width: 768px){
     body{
-        font-size: 0.55em;
+        font-size: 10px;
     }
 }
-@media (max-width: 553px){
+@media (max-width: 500px){
     body{
-        font-size: 0.35em;
+        font-size: 4px;
     }
 }
