@@ -18,45 +18,47 @@ body,html {
 
 body {
     user-select: none; /* Previene la seleccion al hacer doble click */
-    height: 100vh;
+    background-color: rgb(24, 24, 24);
+}
+
+.container{
     width: 100vw;
+    margin: auto;
     display: flex;
-    background-color: rgb(24, 24, 24);;
     font-family: '8-bit_pusabregular';
 }
 
-section {
-    display: flex;
-    margin: auto;
-    height: 85%;
-    width: 65%;
-    border: black solid 1px;
-
-}
-
-.main {
-    margin: auto;
-}
-
 /* ----------------------- FASE 1 ----------------------- */
+#fase1 {
+    margin: auto;
+    height: 65em;
+    width: 80em;
+}
+
 #fase1 img {
     height: 100%;
     width: 100%;
 }
 
 /* ----------------------- FASE 2 ----------------------- */
-.main_coches {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
-    height: 100%;
+#fase2 {
+    margin: auto;
+    height: 65em;
+    width: 80em;
     background-image: url(../img/eleccion.jpg);
     background-size: cover;
     background-position: center;
 }
 
+.main_coches {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100%;
+    width: 100%;  
+}
+
 .indv_coche{
-    padding-top: 2em;
+    padding-top: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,7 +74,6 @@ section {
     height: 1em;
     color: white;
     padding:1em 0 0 0;
-    font-size: 0.8em;
 }
 
 .btn {
@@ -88,10 +89,13 @@ section {
 }
 
 .gif{
-    width: 13em;
+    width: 10em;
 }
 /* ----------------------- FASE 3 ----------------------- */
 #fase3 {
+    margin: auto;
+    height: 65em;
+    width: 80em;
     border: black solid 1px;
     color: white;
     background-image: url(../img/carrera.jpg);
@@ -103,13 +107,12 @@ section {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: rgba(0, 0, 0, 0.5);
-    
 }
 
 #racer1 {
-    width: 25em;
+    width: 15em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,28 +120,28 @@ section {
 }
 
 #race {
-    width: 30em;
+    width: 25em;
     display: flex;
     background-image: url(../img/road.jpg);
     background-size: cover;
+    background-position: center;
+    align-items:flex-end;
 }
 
 #car1 {
-    height: 10em;
+    height: 9em;
     position: relative;
-    bottom: -750px;
-    left: 2em;
+    left: 1.5em;
 }
 
 #car2 {
-    height: 10em;
+    height: 9em;
     position: relative;
-    bottom: -750px;
-    right: -8em;
+    right: -5.5em;
 }
 
 #racer2 {
-    width: 25em;
+    width: 15em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -169,20 +172,23 @@ section {
 
 .boton{
     position:relative;
-    height: 8em;
-    width: 10em;
-    right: 5em;
-    top: 7em;
+    height: 6.5em;
+    width: 8em;
+    right: 4em;
+    top: 9em;
     background-image:url(../img/unpressed.png);
     background-size: cover;
 }
 
 .boton:active {
     background-image:url(../img/pressed.png);
+    background-size: contain;
 }
 
 /* ----------------------- FASE 4 ----------------------- */
 #fase4 {
+    height: 65em;
+    width: 80em;
     margin: auto;
     background-image: url(../img/fin.jpg);
     background-size: cover;
@@ -191,31 +197,49 @@ section {
 }
 
 .end {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 #fase4 img {
-    padding-top: 8em;
-    height: 30vh;
-    width: 30vh;
+    margin-top: 5em;
+    height: 20em;
+    width: 20em;
 }
 
 #ganador {
     color:rgb(255, 217, 0);
-    font-size: 2.5em;   
+    font-size: 3em;   
 }
 
 #fase4 input{
     margin-top: 5em;
     font-family: '8-bit_pusabregular';
+    font-size: 1em;
     background-color: rgb(97, 244, 255);
 }
 
 #campeon img {
-    width: 15em;
-    height: 20em;
+    margin-top: 8em;
+    width: 10em;
+    height: 10em;
+}
+
+/* Media Queries */
+
+@media (max-width: 1000px){
+    body{
+        font-size: 8px;
+    }
+}
+@media (max-width: 748px){
+    body{
+        font-size: 0.55em;
+    }
+}
+@media (max-width: 553px){
+    body{
+        font-size: 0.35em;
+    }
 }

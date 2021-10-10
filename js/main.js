@@ -177,7 +177,7 @@ const AcelerarCoche1 = () => {
 
     console.log(coche1.distanciaRecorrida);
     document.getElementById("dist_recorrida1").innerHTML = `Distancia Recorrida: ${coche1.distanciaRecorrida}`;
-    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 1.6 + -750 + "px";
+    document.getElementById("car1").style.bottom = coche1.distanciaRecorrida / 20 + "em";
 
 }
 
@@ -190,15 +190,15 @@ const AcelerarCoche2 = () => {
 
     console.log(coche2.distanciaRecorrida);
     document.getElementById("dist_recorrida2").innerHTML = `Distancia Recorrida: ${coche2.distanciaRecorrida}`;
-    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 1.6 + -750 + "px";
+    document.getElementById("car2").style.bottom = coche2.distanciaRecorrida / 20 + "em";
 
 }
 // Función para aplicar siguiente partida (Básicamente Reinicia los valores sin pasar a la siguiente Fase del juego)
 const siguientePartida = () => {
     coche1.distanciaRecorrida = 0;
     coche2.distanciaRecorrida = 0;
-    document.getElementById("car1").style.bottom = "-750px";
-    document.getElementById("car2").style.bottom = "-750px";
+    document.getElementById("car1").style.bottom = "0px";
+    document.getElementById("car2").style.bottom = "0px";
     document.getElementById("partidas1").innerHTML = `Partidas Ganadas: ${coche1.partidasGanadas}`;
     document.getElementById("partidas2").innerHTML = `Partidas Ganadas: ${coche2.partidasGanadas}`;
 }
@@ -287,8 +287,8 @@ const reset = () => {
     coche2.distanciaRecorrida = 0;
     coche1.partidasGanadas = 0;
     coche2.partidasGanadas = 0;;
-    document.getElementById("car1").style.bottom = "-750px";
-    document.getElementById("car2").style.bottom = "-750px";
+    document.getElementById("car1").style.bottom = "0px";
+    document.getElementById("car2").style.bottom = "0px";
     coche1 = "";
     coche2 = "";
     capas(1);
